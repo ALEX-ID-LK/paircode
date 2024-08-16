@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ethix-MD</title>
-  <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <style>
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80vh;
+      height: 100vh;
       margin: 0;
-      background-image: url("https://telegra.ph/file/7656761f40994fb763771.jpg"); 
+      background-image: url("https://telegra.ph/file/7656761f40994fb763771.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -22,17 +24,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       animation: fadeIn 1s ease-in;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .header h1 {
       color: #0b8457;
-      font-size: 22px;
+      font-size: 24px;
       margin: 0;
     }
 
@@ -42,15 +48,20 @@
     }
 
     .main input {
-      width: 42%;
-      height: 35px;
+      width: 80%;
+      max-width: 400px;
+      height: 40px;
       border: 1px solid #ccc;
-      padding: 5px 10px;
-      font-size: 15px;
+      padding: 5px 15px;
+      font-size: 16px;
       margin-bottom: 15px;
-      border-radius: 20px;
+      border-radius: 25px;
       text-align: center;
       transition: box-shadow 0.3s ease;
+    }
+
+    #countryCode {
+      width: 30%;
       margin-right: 5px;
     }
 
@@ -59,15 +70,17 @@
     }
 
     .main button {
-      width: 90%;
+      width: 80%;
+      max-width: 400px;
       height: 45px;
-      font-size: 16px;
+      font-size: 18px;
       color: #fff;
       background-color: #D84444;
       border: none;
-      border-radius: 20px;
+      border-radius: 25px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-bottom: 10px;
     }
 
     .main button:hover {
@@ -75,13 +88,14 @@
     }
 
     #copyb {
-      width: 90%;
-      height: 35px;
-      font-size: 14px;
+      width: 80%;
+      max-width: 400px;
+      height: 40px;
+      font-size: 16px;
       color: #fff;
       background-color: #1cb84e;
       border: none;
-      border-radius: 20px;
+      border-radius: 25px;
       cursor: pointer;
       margin-top: 10px;
       transition: background-color 0.3s ease;
@@ -127,6 +141,30 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    .whatsapp-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #25D366;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1EB34B;
+    }
+
+    .whatsapp-button i {
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body>
@@ -148,17 +186,11 @@
       </form>
     </div>
   </div>
-                
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <div class="main">
-                        <button id="icon-button" class="whatsapp-button" onclick="window.open('https://whatsapp.com/channel/0029Vag1WQFJf05dF0pQeU3u', '_blank')">
-                          <i class="fab fa-whatsapp"></i> Join WhatsApp Channel 
-                        </button>
-                      </div>      
-                
+
+  <button id="icon-button" class="whatsapp-button" onclick="window.open('https://whatsapp.com/channel/0029Vag1WQFJf05dF0pQeU3u', '_blank')">
+    <i class="fab fa-whatsapp"></i> Join WhatsApp Channel
+  </button>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
     async function getCountryCode() {
